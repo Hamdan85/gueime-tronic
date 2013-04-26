@@ -5,6 +5,8 @@ GueimeTronic::Application.routes.draw do
 
   get "users/edit"
 
+  match 'admin' => 'users#login'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
