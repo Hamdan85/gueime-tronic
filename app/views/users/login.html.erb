@@ -107,7 +107,7 @@
         <div class="controls">
           <div class="input-icon left">
             <i class="icon-ok"></i>
-            <%= f.password_field :password_confirmation, :class => "m-wrap placeholder-no-fix", :placeholder => "confirme sua senha", :name => "rpassword" %>
+            <%= f.password_field :password_confirmation, :class => "m-wrap placeholder-no-fix", :placeholder => "confirme sua senha" %>
           </div>
         </div>
       </div>
@@ -133,7 +133,8 @@
         <button id="register-back-btn" type="button" class="btn">
         <i class="m-icon-swapleft"></i>  Back
         </button>
-        <%= f.submit "Registrar", :id => "register-submit-btn", :class => "btn green pull-right" do %><i class="m-icon-swapright m-icon-white"></i>
+        <%= f.submit "Registrar", :id => "register-submit-btn", :class => "btn green pull-right" do %>
+          <i class="m-icon-swapright m-icon-white"></i>
         <% end %>
       </div>
     <% end %>
