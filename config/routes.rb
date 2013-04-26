@@ -1,9 +1,14 @@
 GueimeTronic::Application.routes.draw do
+
+  resources :users
+
   get "users/login"
 
   get "users/register"
 
   get "users/edit"
+
+  match "/usuarios/:id" => "users#show" 
 
   match 'admin' => 'users#login'
 

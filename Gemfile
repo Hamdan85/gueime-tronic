@@ -11,6 +11,8 @@ group :development, :test do
   gem 'rspec-rails', '2.11.0'
 end
 
+gem "pg", :group => :production
+
 group :development do
   gem 'annotate', '2.5.0'
 end
@@ -25,6 +27,10 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :test do
+    gem 'factory_girl_rails', '4.1.0'
 end
 
 gem 'jquery-rails'

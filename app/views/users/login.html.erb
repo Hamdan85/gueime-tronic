@@ -1,5 +1,6 @@
+
 <!-- BEGIN BODY -->
-<div class="login">
+<body class="login">
   <!-- BEGIN LOGO -->
   <div class="logo">
     <img src="/assets/logo-big.png" alt="" /> 
@@ -80,42 +81,43 @@
     <!-- END FORGOT PASSWORD FORM -->
     <!-- BEGIN REGISTRATION FORM -->
     <form class="form-vertical register-form" action="index.html">
-      <h3 class="">Sign Up</h3>
-      <p>Enter your account details below:</p>
+      <%= form_for(:user) do |f| %>
+      <h3 class="">Registre-se</h3>
+      <p>Digite seus dados:</p>
       <div class="control-group">
-        <label class="control-label visible-ie8 visible-ie9">Username</label>
+        <%= f.label :namel, :class => "control-label visible-ie8 visible-ie9" %>
         <div class="controls">
           <div class="input-icon left">
             <i class="icon-user"></i>
-            <input class="m-wrap placeholder-no-fix" type="text" placeholder="Username" name="username"/>
+            <%= f.text_field :name, :class => "m-wrap placeholder-no-fix", :placeholder => "usuário" %>
           </div>
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label visible-ie8 visible-ie9">Password</label>
+        <%= f.label :password, :class => "control-label visible-ie8 visible-ie9" %>
         <div class="controls">
           <div class="input-icon left">
             <i class="icon-lock"></i>
-            <input class="m-wrap placeholder-no-fix" type="password" id="register_password" placeholder="Password" name="password"/>
+            <%= f.password_field :password, :class => "m-wrap placeholder-no-fix", :placeholder => "senha" %>
           </div>
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
+        <%= f.label :password_confirmation, :class => "control-label visible-ie8 visible-ie9" %>
         <div class="controls">
           <div class="input-icon left">
             <i class="icon-ok"></i>
-            <input class="m-wrap placeholder-no-fix" type="password" placeholder="Re-type Your Password" name="rpassword"/>
+            <%= f.password_field :password_confirmation, :class => "m-wrap placeholder-no-fix", :placeholder => "confirme sua senha", :name => "rpassword" %>
           </div>
         </div>
       </div>
       <div class="control-group">
         <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-        <label class="control-label visible-ie8 visible-ie9">Email</label>
+        <%= f.label :email, :class => "control-label visible-ie8 visible-ie9" %>
         <div class="controls">
           <div class="input-icon left">
             <i class="icon-envelope"></i>
-            <input class="m-wrap placeholder-no-fix" type="text" placeholder="Email" name="email"/>
+            <%= f.text_field :email, :class => "m-wrap placeholder-no-fix", :placeholder => "e-mail", :name => "email" %>
           </div>
         </div>
       </div>
@@ -131,12 +133,11 @@
         <button id="register-back-btn" type="button" class="btn">
         <i class="m-icon-swapleft"></i>  Back
         </button>
-        <button type="submit" id="register-submit-btn" class="btn green pull-right">
-        Sign Up <i class="m-icon-swapright m-icon-white"></i>
-        </button>            
+        <%= f.submit "Registrar", :id => "register-submit-btn", :class => "btn green pull-right" do %><i class="m-icon-swapright m-icon-white"></i>
+        <% end %>
       </div>
+    <% end %>
     </form>
     <!-- END REGISTRATION FORM -->
   </div>
   <!-- END LOGIN -->
-</div>
