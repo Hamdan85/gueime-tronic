@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GueimeTronic</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="pt-BR"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+  <meta charset="utf-8" />
+  <title>Gueime - AdmLogin</title>
+
+  <link href="/assets/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/metro.css" rel="stylesheet" />
+  <link href="/assets/font-awesome.css" rel="stylesheet" />
+  <link href="/assets/style.css" rel="stylesheet" />
+  <link href="/assets/style_responsive.css" rel="stylesheet" />
+  <link href="/assets/style_default.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="/assets/uniform.default.css" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+<!-- END HEAD -->
+
+</head>
+<body>
+
+<%= yield %>
+
+
+
+<!-- BEGIN JAVASCRIPTS -->
+  <script src="/assets/jquery-1.8.3.min.js"></script>
+  <script src="/assets/bootstrap.min.js"></script>  
+  <script src="/assets/jquery.uniform.min.js"></script> 
+  <script src="/assets/jquery.blockui.js"></script>
+  <script type="text/javascript" src="/assets/jquery.validate.min.js"></script>
+  <script src="/assets/app.js"></script>
+  <script>
+    jQuery(document).ready(function() {     
+      App.initLogin();
+    });
+  </script>
+  <script> cu de rola</script>
+<!-- END JAVASCRIPTS -->
+
+  <!-- BEGIN COPYRIGHT -->
+  <div class="copyright">
+    2013 &copy; Metronic. Admin Dashboard Template.
+  </div>
+  <!-- END COPYRIGHT -->
+
+</body>
+</html>
