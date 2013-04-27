@@ -6,11 +6,13 @@ GueimeTronic::Application.routes.draw do
 
   get "users/register"
 
-  get "users/edit"
+  match "/edit" => "users#edit"
 
   match "/usuarios/:id" => "users#show" 
 
-  match 'admin' => 'users#create'
+  match "/registro" => "users#new"
+
+  match "admin" => "users#create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,9 +1,8 @@
 class UsersClearenceTable < ActiveRecord::Migration
   def change
-
-	change_table :products do |t|
+	create_table :userClearence, :id => false do |t|
 		t.integer :userid
-		t.string :userClerence
+		t.string :userClearence
 	end
   end
 end
