@@ -18,12 +18,32 @@ class User < ActiveRecord::Base
 
   before_save { |user| user.email = email.downcase }
 
-  validates :name, presence: true, length: { maximum: 50 }
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-  validates :username, presence: true, uniqueness: true
+  validates :name, 
+  	:presence => { :message => "Não seja timido! Qual seu nome?"}, 
+  	:length => { :minimum => 2, :maximum => 40, :message => 'Nome deve ter entre 2 e 40 caracteres.' }
   
-  validates :password, presence: true, length: { minimum: 6 }
-  validates :password_confirmation, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+  validates :email, 
+  	presence: { :message => "Poxa! Você precisa ter um email."}, 
+  	format: { with: VALID_EMAIL_REGEX, :message => "Email invalido." }, 
+  	uniqueness: { case_sensitive: false, :message => "Email ja registrado." }
+
+  validates :username, 
+  presence: { 
+  	:message => "Escolha um nome de usuário." }, 
+  uniqueness: { 
+  	:message => "Nome de usuário ja esta sendo utilizado."}
+  
+  validates :password, 
+  presence: { :message => "Escolha uma senha"}, 
+  length: { minimum: 6, :message => "A senha escolhida e muito curta" }
+  
+  validates :password_confirmation, 
+  presence: { :message => "Confirme sua senha." }
+  #:if => { :passequal? } #lembrar de descobrir como implementar o :messages nessa condiçao
+	
+	def passequal?
+		:password_confirmation == :password
+	end
 end

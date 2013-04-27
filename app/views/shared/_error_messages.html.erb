@@ -1,12 +1,13 @@
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <div class="alert alert-error">
-      The form contains <%= pluralize(@user.errors.count, "error") %>.
-    </div>
+<%= puts :field %>
+<% if @user.errors[:field].any? %>
+  <div class="help-inline help-small no-left-padding">
+
     <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li>* <%= msg %></li>
-    <% end %>
+      <% @user.errors[:field].each do t %>
+        <li>
+          <%=  @user.errors[:field].to_s[2..-3] %>
+        </li>
+      <% end -%>
     </ul>
   </div>
-<% end %>
+<% end -%>

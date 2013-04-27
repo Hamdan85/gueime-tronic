@@ -2,7 +2,7 @@ GueimeTronic::Application.routes.draw do
 
   resources :users
 
-  get "users/login"
+  match "/users/create" => "users#create"
 
   get "users/register"
 
@@ -12,7 +12,7 @@ GueimeTronic::Application.routes.draw do
 
   match "/registro" => "users#new"
 
-  match "admin" => "users#create"
+  match "admin" => "users#login"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

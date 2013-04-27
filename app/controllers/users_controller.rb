@@ -17,7 +17,8 @@ class UsersController < ApplicationController
   	    	#redirect_to @user
   	    	redirect_to "/usuarios/" + @user.name
   	 	 else
-  	    	redirect_to '/registro'
+  	    	#redirect_to '/registro'
+  	    	render 'new'
 		end
 	end
 	def new
