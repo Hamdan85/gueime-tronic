@@ -21,7 +21,7 @@
               <i class="icon-user"></i>
               <%= f.text_field :username, class: "m-wrap placeholder-no-fix", :placeholder => "apelido" %>
             </div>
-            <%= render :partial => "shared/error_messages", :locals => { :field => ":username" } %>
+            <%= showuserCerror(':username') %>
           </div>
         </div>
         <div class="control-group">
